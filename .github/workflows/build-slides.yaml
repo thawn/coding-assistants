@@ -47,6 +47,6 @@ jobs:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               with:
                 upload_url: ${{ steps.create_release.outputs.upload_url }}
-                asset_path: ./slides/slides.pdf
+                asset_path: ./slides.pdf
                 asset_name: slides.pdf
                 asset_content_type: application/pdf
