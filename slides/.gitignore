@@ -2,7 +2,7 @@
 .DS_Store
 
 # slides are now built in the CI
-*.pdf
+slides.pdf
 
 ## VS Code
 .vscode/
