@@ -1,0 +1,103 @@
+{
+    "models": [
+        {
+            "model": "qwen2.5-coder-32b-instruct",
+            "title": "HZDR-AI Qwen",
+            "name": "qwen2.5-coder-32b-instruct",
+            "apiKey": "continue-dev",
+            "apiBase": "https://localai-test.fz-rossendorf.de/v1",
+            "provider": "openai",
+            "contextLength": 132768,
+            "completionOptions": {
+                "stop": [
+                    "<END EDITING HERE>"
+                ]
+            }
+        },
+        {
+            "model": "gemma-3-27b-it",
+            "title": "HZDR-AI Gemma-3",
+            "name": "gemma-3-27b-it",
+            "apiKey": "continue-dev",
+            "apiBase": "https://localai-test.fz-rossendorf.de/v1",
+            "provider": "openai",
+            "contextLength": 132768,
+            "completionOptions": {
+                "stop": [
+                    "<END EDITING HERE>"
+                ]
+            }
+        }
+    ],
+    "customCommands": [
+        {
+            "name": "test",
+            "prompt": "{{{ input }}}\n\nWrite a comprehensive set of unit tests for the selected code. It should setup, run tests that check for correctness including important edge cases, and teardown. Ensure that the tests are complete and sophisticated. Give the tests just as chat output, don't edit any file.",
+            "description": "Write unit tests for highlighted code"
+        }
+    ],
+    "tabAutocompleteModel": {
+        "model": "qwen2.5-coder-7b-instruct",
+        "title": "HZDR-AI",
+        "apiKey": "continue-dev",
+        "apiBase": "https://localai-test.fz-rossendorf.de/v1",
+        "provider": "openai",
+        "contextLength": 16384,
+        "completionOptions": {
+            "temperature": 0.7,
+            "topK": 20,
+            "topP": 0.8,
+            "stop": [
+                "<END EDITING HERE>"
+            ]
+        },
+        "requestOptions": {
+            "extraBodyProperties": {
+                "repetition_penalty": 1.05
+            }
+        }
+    },
+    "embeddingsProvider": {
+        "provider": "openai",
+        "model": "nomic-embed-text-v1.5",
+        "apiKey": "continue-dev",
+        "apiBase": "https://localai-test.fz-rossendorf.de",
+        "maxEmbeddingChunkSize": 1500,
+        "maxEmbeddingBatchSize": 25
+    },
+    "contextProviders": [
+        {
+            "name": "code",
+            "params": {}
+        },
+        {
+            "name": "docs",
+            "params": {}
+        },
+        {
+            "name": "diff"
+        },
+        {
+            "name": "codebase",
+            "params": {
+                "nRetrieve": 25,
+                "nFinal": 15,
+                "useReranking": false
+            }
+        },
+        {
+            "name": "gitlab-mr",
+            "params": {
+                "token": "<token>",
+                "domain": "codebase.helmholtz.cloud"
+            }
+        }
+    ],
+    "docs": [],
+    "tabAutocompleteOptions": {
+        "maxPromptTokens": 16384,
+        "useFileSuffix": true,
+        "debounceDelay": 100,
+        "template": "You are Qwen, created by Alibaba Cloud. You are a helpful assistant. You are a helpful assistant.<|fim_prefix|>{{{ prefix }}}<|fim_suffix|>{{{ suffix }}}<|fim_middle|>"
+    }
+}

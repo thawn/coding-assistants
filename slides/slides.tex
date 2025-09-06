@@ -1,0 +1,484 @@
+\documentclass[
+  %ignorenonframetext,
+  aspectratio=1610,
+]{beamer}
+
+\usepackage{Helmholtz-AI}
+%% extrapackages added from markdown frontmatter
+\usepackage{fontawesome5}
+\usepackage{xspace} 
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{xspace}
+\usepackage{verbatim}
+\usepackage{listings}
+\usepackage{pifont}
+\usepackage{ulem}
+\usepackage{media9}
+\usepackage{enumitem}
+% References
+% \usepackage[
+%   backend=biber,
+%   url=true,
+%   sorting=none,
+%   ]{biblatex}
+%   \addbibresource{references.bib}
+\usepackage{hyperref}
+  
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% add labels to itemize
+\setlist[itemize,1]{label=\textbullet}
+\setlist[itemize,2]{label=\textopenbullet}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=hgfblue,
+  filecolor=Maroon,
+  citecolor=hgfinformation,
+  urlcolor=hgfmatter,
+  pdfcreator={Till Korten}
+  }
+
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows.meta}
+
+% LISTINGS SETUP (for code)
+\lstdefinestyle{code}{
+basicstyle=\ttfamily\footnotesize,
+keywordstyle=\bfseries,
+commentstyle=\itshape,
+showstringspaces=false,
+columns=fullflexible,
+frame=single,
+breaklines=true,
+tabsize=2
+}
+
+% SHORTCUTS
+\newcommand{\cmark}{\ding{51}} % checkmark
+\newcommand{\xmark}{\ding{55}} % xmark
+\newcommand{\tool}[1]{\texttt{#1}}
+
+\title{Coding Assistants and How to Set Them Up} % Change Me
+\subtitle{Workshop - Level Up Your Skills} % Change Me
+\author{\href{mailto:t.korten@hzdr.de}{Till Korten}} % Change Me
+\date{September 9, 2025} % Change Me
+\institute{Helmholtz-Zentrum Dresden-Rossendorf}
+\titlegraphic{}
+
+
+% BEGIN DOCUMENT
+\begin{document}
+
+% 1 — TITLE
+\maketitle
+
+% % 2 — WHO THIS IS FOR
+% \begin{frame}{Who is this session for?}
+%   \begin{itemize}
+%     \item Researchers and Research Software Engineers curious about AI-assisted coding.
+%     \item Basic familiarity with modern IDEs is helpful, not required.
+%     \item No prior LLM experience needed — just willingness to experiment and iterate.
+%   \end{itemize}
+%   \vspace{0.5em}
+%   \textbf{Format:} 90-minute hands-on workshop with live coding.
+% \end{frame}
+
+% % 3 — LEARNING OBJECTIVES
+% \begin{frame}{By the end, you will be able to…}
+%   \begin{itemize}
+%     \item Deploy a coding assistant in your preferred IDE with minimal friction.
+%     \item Tailor prompts and model parameters to maximize relevance and reduce noise.
+%     \item Establish guardrails so generated code meets quality and security standards.
+%   \end{itemize}
+% \end{frame}
+
+
+\begin{frame}{What are coding assistants?}
+  \begin{columns}
+    \begin{column}{0.6\textwidth}
+      \includemedia[
+        activate=pageopen,
+        addresource=images/use_cases_fast.mp4,
+        flashvars={
+            source=assets/copilot.mp4
+            &autoPlay=true
+            &loop=true
+          }
+      ]{\includegraphics[width=\textwidth]{images/add_nll_loss.png}}{VPlayer.swf}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+      \begin{itemize}
+        \item IDE-integrated tools that suggest code, document, refactor, explain, and generate tests.
+        \item Powered by large language models (LLMs) and repository/IDE context.
+        \item Accelerate routine tasks; you stay in control. \emph{Human-in-the-loop is essential.}
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}{Typical use-cases}
+  \begin{description}
+    \item[Inline code completion] Suggests code as you type, anticipating common patterns and completing statements.
+    \item[Docstrings and comments] Generates comprehensive documentation that follows project conventions.
+    \item[Test generation] Creates unit tests with appropriate assertions based on implementation code.
+    \item[API usage examples] Demonstrates how to use libraries and frameworks with contextually relevant examples.
+  \end{description}
+\end{frame}
+
+
+\begin{frame}{Typical use-cases}
+  \begin{description}
+    \item[Boilerplate generation] Creates repetitive scaffolding code like class definitions, function templates, and data structures.
+    \item[Refactoring suggestions] Identifies code that could be improved and offers cleaner implementations, e.g. remove redundant code.
+    \item[Code explanation] Provides natural language descriptions of complex code for easier onboarding.
+    \item[Context querying] Answers questions about project structure, dependencies, and implementation details.
+  \end{description}
+\end{frame}
+
+
+\begin{frame}{Inline code completion}
+  \begin{columns}[T,totalwidth=\textwidth]
+    \begin{column}{0.6\textwidth}
+      \includemedia[
+        activate=pageopen,
+        addresource=images/add_nll_loss.mp4,
+        flashvars={
+            source=images/add_nll_loss.mp4
+            &autoPlay=true
+            &loop=true
+          }
+      ]{\includegraphics[width=\textwidth]{images/add_nll_loss.png}}{VPlayer.swf}
+    \end{column}
+    \begin{column}{0.37\textwidth}
+      Tipps:
+      \begin{itemize}
+        \item \textbf{Always review suggestions!} They may be incorrect or insecure.
+        \item Use speaking function/variable names.
+        \item Use comments to prompt for specific logic.
+        \item Use Ctrl + \rightarrow to partially accept suggestions.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}{Docstrings and comments}
+  \begin{columns}[T,totalwidth=\textwidth]
+    \begin{column}{0.6\textwidth}
+      \includemedia[
+        activate=pageopen,
+        addresource=images/generate_docs_shorter.mp4,
+        flashvars={
+            source=images/generate_docs_shorter.mp4
+            &autoPlay=true
+            &loop=true
+          }
+      ]{\includegraphics[width=\textwidth]{images/generate_docs.png}}{VPlayer.swf}
+    \end{column}
+    \begin{column}{0.37\textwidth}
+      Tips:
+      \begin{itemize}
+        \item Use existing docstrings as style examples.
+        \item Ask for specific formats (e.g., RST, NumPy, Google).
+        \item Edit and use inline completion if the first attempt is not satisfactory.
+        \item Add documentation style to system prompt.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}{Test generation}
+  \begin{columns}[T,totalwidth=\textwidth]
+    \begin{column}{0.6\textwidth}
+      \includemedia[
+        activate=pageopen,
+        addresource=images/generate_tests.mp4,
+        flashvars={
+            source=images/generate_tests.mp4
+            &autoPlay=true
+            &loop=true
+          }
+      ]{\includegraphics[width=\textwidth]{images/generate_tests.png}}{VPlayer.swf}
+    \end{column}
+    \begin{column}{0.37\textwidth}
+      Tips:
+      \begin{itemize}
+        \item Add and refine docstrings to functions before generating tests.
+        \item Review and adapt the first generated test to fit project style, then re-generate the rest.
+        \item Use the re-generate function to get multiple variants.
+        \item Sometimes the test file is in the wong place. Just move it and it should work.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}{API usage examples}
+  \begin{columns}[T,totalwidth=\textwidth]
+    \begin{column}{0.6\textwidth}
+      \includemedia[
+        activate=pageopen,
+        addresource=images/api-use.mp4,
+        flashvars={
+            source=images/api-use.mp4
+            &autoPlay=true
+            &loop=true
+          }
+      ]{\includegraphics[width=\textwidth]{images/api-use.png}}{VPlayer.swf}
+    \end{column}
+    \begin{column}{0.37\textwidth}
+      prompt: write a function that loads a optuna study from a given path as pandas dataframe and plots the results using seaborn
+
+      \begin{itemize}
+        \item Often used libraries (Pandas, numpy, seaborn)
+        \item Well documented open-source libraries.
+        \item Test the generated code and refine as needed.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}{Boilerplate generation}
+  \begin{columns}[T,totalwidth=\textwidth]
+    \begin{column}{0.6\textwidth}
+      \includemedia[
+        activate=pageopen,
+        addresource=images/boilerplate.mp4,
+        flashvars={
+            source=images/boilerplate.mp4
+            &autoPlay=true
+            &loop=true
+          }
+      ]{\includegraphics[width=\textwidth]{images/boilerplate.png}}{VPlayer.swf}
+    \end{column}
+    \begin{column}{0.37\textwidth}
+      Tips:
+      \begin{itemize}
+        \item Be specific about requirements and constraints.
+        \item Provide context: existing classes, interfaces, or data models.
+        \item \textbf{Only use code that you understand.}
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}{Refactoring suggestions}
+  \begin{columns}[T,totalwidth=\textwidth]
+    \begin{column}{0.6\textwidth}
+      \includemedia[
+        activate=pageopen,
+        addresource=images/refactor_latex.mp4,
+        flashvars={
+            source=images/refactor_latex.mp4
+            &autoPlay=true
+            &loop=true
+          }
+      ]{\includegraphics[width=\textwidth]{images/refactor_latex.png}}{VPlayer.swf}
+    \end{column}
+    \begin{column}{0.37\textwidth}
+      Tips:
+      \begin{itemize}
+        \item Use prompt to specify the type of refactor (e.g., reduce redundancy, split into atomc functions).
+        \item Review changes carefully; automated refactors may introduce bugs.
+        \item Create unit tests before refactoring to catch bugs and ensure behavior is preserved.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+% \begin{frame}{What works well vs. where to be careful}
+%   \begin{columns}[T,totalwidth=\textwidth]
+%     \begin{column}{0.5\textwidth}
+%       \textbf{Works well}
+%       \begin{itemize}
+%         \item Boilerplate, adapters, glue code
+%         \item API usage for common libraries
+%         \item Test scaffolding and fixtures
+%         \item Documenting familiar code
+%         \item Small refactors in one file (but use dedicated tools for simple renames)
+%       \end{itemize}
+%     \end{column}
+%     \begin{column}{0.5\textwidth}
+%       \textbf{Use caution}
+%       \begin{itemize}
+%         \item New algorithms not represented in training data
+%         \item Complex algorithms without test coverage
+%         \item Security-sensitive code
+%         \item Silent failure modes \& hallucinations
+%         \item Licensing/attribution ambiguities
+%       \end{itemize}
+%     \end{column}
+%   \end{columns}
+% \end{frame}
+
+
+% \begin{frame}{Prompt patterns that work}
+%   \begin{description}
+%     \item[Instruction + constraints] "Write a pure function with examples and edge cases."
+%     \item[Provide context] paste the signature, test, or README snippet.
+%     \item[Iterate] ask for smaller diffs; request rationale.
+%     \item[Guardrails] require tests, types, and adherence to style.
+%   \end{description}
+% \end{frame}
+
+
+% \begin{frame}{What should humans write?}
+%   \begin{itemize}
+%     \item Architecture decisions, threat models
+%     \item Critical paths, novel algorithms, domain-specific correctness.
+%     \item Code reviews, acceptance criteria, and final test oracles.
+%   \end{itemize}
+% \end{frame}
+
+
+% \begin{frame}{Quality guardrails \& automation}
+%   \begin{itemize}
+%     \item Enforce style/quality: linters (ruff/eslint), formatters (black/prettier).
+%     \item Tests first: unit + property tests; require coverage thresholds.
+%     \item CI checks: static analysis, SAST/DAST, license checks.
+%     \item Keep a \emph{golden} example suite the assistant must pass.
+%   \end{itemize}
+% \end{frame}
+
+
+
+\begin{frame}{Coding assistant examples}
+  \begin{tabularx}{\linewidth}{@{} l l X @{}}
+    \toprule
+    \textbf{Tool}                                              & \textbf{Type} & \textbf{Notes}                                                                                                                                                                                                                     \\
+    \midrule
+    \href{https://github.com/features/copilot}{GitHub Copilot} & Commercial    & Extension for VS Code/Spyder/JetBrains etc.; Various commercial models available. \href{https://github.com/features/copilot}{https://github.com/features/copilot}                                                                  \\
+    \href{https://continue.dev}{continue.dev}                  & Open-source   & Extension for VS Code or JetBrains; Works with local models (LM Studio) and on premise hosted models (e.g. \href{https://chat.fz-rossendorf.de}{https://chat.fz-rossendorf.de}). \href{https://continue.dev}{https://continue.dev} \\
+    \href{https://cursor.com}{Cursor AI}                       & Commercial    & Stand alond IDE with deep code agent integration. (Not used in practical part) \href{https://cursor.com}{https://cursor.com}                                                                                                       \\
+    \bottomrule
+  \end{tabularx}
+\end{frame}
+
+
+\begin{frame}{Coding assistants \& privacy}
+  \begin{itemize}
+    \item Coding assistants need to send your data (code/questions etc.) to the model
+    \item Data \textbf{will} be sent to third-party servers for commercial assistants
+    \item Sometimes you can opt out of data sharing or training (for a price)
+    \item Only use open-source or self-hosted solutions for sensitive code
+  \end{itemize}
+  \vspace{0.5em}
+  \begin{tabularx}{\linewidth}{@{} l l X @{}}
+    \toprule
+    \textbf{Tool}                                              & \textbf{Privacy} & \textbf{Use-cases}                                                                                                                                                                  \\
+    \midrule
+    \href{https://github.com/features/copilot}{GitHub Copilot} & Medium           & Open source/proprietary code; Copilot claims that user requests are not used for training by default.                                                                               \\
+    \href{https://continue.dev}{continue.dev}                  & High             & Open source/Proprietary/confidential code                                                                                                                                           \\
+    \href{https://cursor.com}{Cursor AI}                       & Low/medium       & Open source code/proprietary code; Optional privacy mode claims to not share data with others, but Cursor will store your data (to provide "features") but not use it for training. \\
+    \bottomrule
+  \end{tabularx}
+\end{frame}
+
+
+\begin{frame}{Live coding challenge: what you will build}
+  \begin{itemize}
+    \item Small feature implementation with tests (language/IDE of your choice).
+    \item Use assistant for: scaffolding, refactor steps, unit tests, docstrings.
+    \item Measure: fewer keystrokes, faster iteration, equal or better quality.
+    \item Project: your choice (e.g., personal, open-source, or provided sample).
+    \item Example: write a function that loads a .csv file as pandas dataframe and plots the results using seaborn.
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Setup - Options}
+  \begin{itemize}
+    \item continue.dev with blablador (works everywhere)
+    \item continue.dev with HZDR AI (works only on-campus (wired network or FSR wifi))
+    \item continue.dev with LM Studio (on your machine, requires GPU with ~20 GB RAM or Apple M CPU with >=24GB)
+    \item GitHub Copilot (requires GitHub account)
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Setup — Environment preparation}
+  \begin{columns}[T,totalwidth=\textwidth]
+    \begin{column}{0.6\textwidth}
+      \includemedia[
+        activate=pageopen,
+        addresource=images/install_continue_plugin.mp4,
+        flashvars={
+            source=images/install_continue_plugin.mp4
+            &autoPlay=true
+            &loop=true
+          }
+      ]{\includegraphics[width=\textwidth]{images/install_continue_plugin.png}}{VPlayer.swf}
+    \end{column}
+    \begin{column}{0.37\textwidth}
+      \begin{itemize}
+        \item Install IDE extension (VS Code or JetBrains plugin).
+        \item Create account/API Key.
+        \item Configure the extension.
+        \item Instructions on GitHub \href{https://github.com/thawn/coding-assistants/configurations/}{https://github.com/thawn/\\coding-assistants/\\configurations/}
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}[fragile]{Align coding assistants to your project}
+  \textbf{Whenever possible, provide examples of your preferred style, the assistant will learn from them.}
+
+  \vspace{0.5em}
+
+  \textbf{Project profile prompt (drop into the assistant):}
+  \begin{lstlisting}[style=code]
+  You are my pair programmer for a research codebase.
+  Stack: Python 3.11, pytest, numpy, pandas; style: black + ruff.
+  Non-negotiables: type hints, docstrings, 95% test coverage target.
+  When unsure, ask; propose small, diffable changes with rationale.
+    \end{lstlisting}
+  \vspace{0.3em}
+  \textit{Keep this short and concrete. Reuse it as a system message or workspace note.}
+\end{frame}
+
+
+\begin{frame}{Model selection}
+  \begin{itemize}
+    \item Match model to task: Performance trade-offs between latency and accuracy
+          \begin{description}
+            \item[Code completion] Low-latency models; smaller context windows: Qwen3-coder, Claude Sonnet 4, GPT-4.1-copilot
+            \item[Chat] Interactive models; medium context windows: GPT-5, Claude Sonnet 4, Qwen3-coder
+            \item[Tool-use] Powerful tool models; large context windows: GPT-5, Claude Opus 4.1, Qwen3-coder
+          \end{description}
+    \item Proprietary vs. open-source models:
+          \begin{itemize}
+            \item Proprietary models (e.g., GPT, Claude) often lead in performance but may have privacy concerns
+            \item Open-source models (e.g., Qwen, Llama, Mistral) offer more control and can be self-hosted for sensitive data
+            \item Considering hardware and maintenance, self-hosting is the most expensive option
+          \end{itemize}
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Thank you!}
+  \begin{itemize}
+    \item The Helmholtz AI team
+    \item Oliver Guhr
+    \item Alex Strube and his team for Blablador
+    \item Tobias Huste and his team for \href{https://chat.fz-rossendorf.de}{chat.fz-rossendorf.de}
+    \item Questions?
+    \item Slides and example configurations: \href{https://github.com/thawn/coding-assistants/}{https://github.com/thawn/coding-assistants/}
+  \end{itemize}
+
+\end{frame}
+
+
+\end{document}
