@@ -387,6 +387,41 @@ tabsize=2
 \end{frame}
 
 
+\begin{frame}[fragile]{Align coding assistants to your project}
+  \textbf{Whenever possible, provide examples of your preferred style, the assistant will learn from them.}
+
+  \vspace{0.5em}
+
+  \textbf{Project profile prompt (drop into the assistant configuration):}
+  \begin{lstlisting}[style=code]
+    You are my pair programmer for a research codebase.
+    Stack: Python 3.11, pytest, numpy, pandas; style: black + ruff.
+    Non-negotiables: type hints, docstrings, 95% test coverage target.
+    When unsure, ask; propose small, diffable changes with rationale.
+  \end{lstlisting}
+  \vspace{0.3em}
+  \textit{Keep this short and concrete. Reuse it as a system message or workspace note.}
+\end{frame}
+
+
+\begin{frame}{Model selection}
+  \begin{itemize}
+    \item Match model to task: Performance trade-offs between latency and accuracy
+          \begin{description}
+            \item[Code completion] Low-latency models; smaller context windows: Qwen3-coder, Claude Sonnet 4, GPT-4.1-copilot
+            \item[Chat] Interactive models; medium context windows: GPT-5, Claude Sonnet 4, Qwen3-coder
+            \item[Tool-use] Powerful tool models; large context windows: GPT-5, Claude Opus 4.1, Qwen3-coder
+          \end{description}
+    \item Proprietary vs. open-source models:
+          \begin{itemize}
+            \item Proprietary models (e.g., GPT, Claude) often lead in performance but may have privacy concerns
+            \item Open-source models (e.g., Qwen, Llama, Mistral) offer more control and can be self-hosted for sensitive data
+            \item Considering hardware and maintenance, self-hosting is the most expensive option
+          \end{itemize}
+  \end{itemize}
+\end{frame}
+
+
 \begin{frame}{Live coding challenge: what you will build}
   \begin{itemize}
     \item Small feature implementation with tests (language/IDE of your choice).
@@ -433,37 +468,15 @@ tabsize=2
 \end{frame}
 
 
-\begin{frame}[fragile]{Align coding assistants to your project}
-  \textbf{Whenever possible, provide examples of your preferred style, the assistant will learn from them.}
-
-  \vspace{0.5em}
-
-  \textbf{Project profile prompt (drop into the assistant):}
-  \begin{lstlisting}[style=code]
-  You are my pair programmer for a research codebase.
-  Stack: Python 3.11, pytest, numpy, pandas; style: black + ruff.
-  Non-negotiables: type hints, docstrings, 95% test coverage target.
-  When unsure, ask; propose small, diffable changes with rationale.
-    \end{lstlisting}
-  \vspace{0.3em}
-  \textit{Keep this short and concrete. Reuse it as a system message or workspace note.}
-\end{frame}
-
-
-\begin{frame}{Model selection}
+\begin{frame}{Example project}
+  \textbf{Prompt:} write a python file that loads the diabetes dataset from scikit learn as pandas dataframe and plots the results using seaborn
   \begin{itemize}
-    \item Match model to task: Performance trade-offs between latency and accuracy
-          \begin{description}
-            \item[Code completion] Low-latency models; smaller context windows: Qwen3-coder, Claude Sonnet 4, GPT-4.1-copilot
-            \item[Chat] Interactive models; medium context windows: GPT-5, Claude Sonnet 4, Qwen3-coder
-            \item[Tool-use] Powerful tool models; large context windows: GPT-5, Claude Opus 4.1, Qwen3-coder
-          \end{description}
-    \item Proprietary vs. open-source models:
-          \begin{itemize}
-            \item Proprietary models (e.g., GPT, Claude) often lead in performance but may have privacy concerns
-            \item Open-source models (e.g., Qwen, Llama, Mistral) offer more control and can be self-hosted for sensitive data
-            \item Considering hardware and maintenance, self-hosting is the most expensive option
-          \end{itemize}
+    \item Load the dataset using `from sklearn.datasets import load\_diabetes`
+    \item Convert it to a pandas dataframe
+    \item Use `seaborn` to create a plot of the data
+    \item tell the assistant to convert the python file to a jupyter notebook
+    \item Advanced: tell the assistant to convert the notebook to an installable package
+    \item Advanced 2: Add docstrings and tests
   \end{itemize}
 \end{frame}
 
@@ -471,7 +484,6 @@ tabsize=2
 \begin{frame}{Thank you!}
   \begin{itemize}
     \item The Helmholtz AI team
-    \item Oliver Guhr
     \item Alex Strube and his team for Blablador
     \item Tobias Huste and his team for \href{https://chat.fz-rossendorf.de}{chat.fz-rossendorf.de}
     \item Questions?
