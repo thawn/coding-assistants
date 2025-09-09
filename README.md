@@ -7,4 +7,3 @@
 Slide PDFs can be found in releases.
 
 Use a PDF reader that can play movies (e.g. Adobe Acrobat Reader, Foxit Reader)
-

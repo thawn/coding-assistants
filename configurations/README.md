@@ -7,12 +7,14 @@
    * Mac/Linux:  `~/.continue/config.json`
    * Windows: `%USERPROFILE%\.continue\config.json`
 3. Replace `<insert API key here>` with the API key generated in step 1 (Note: it should start with `gplat-...`)
+4. delete `.continue/config.yaml` if it exists
 
 ## `continue.dev` with HZDR AI
 
 1. Copythe example configuration file from `continue.dev_hzdr/config.json` to:
    * Mac/Linux:  `~/.continue/config.json`
    * Windows: `%USERPROFILE%\.continue\config.json`
+2. delete `.continue/config.yaml` if it exists
 
 ## `continue.dev` with LM Studio on your computer
 
@@ -24,3 +26,4 @@ This requires a powerful GPU with ~ 20 GB RAM (e.g. RTX 3090) or an Apple M CPU 
 4. Copy the example configuration file from `continue.dev_lmstudio/config.json` to:
    * Mac/Linux:  `~/.continue/config.json`
    * Windows: `%USERPROFILE%\.continue\config.json`
+5. delete `.continue/config.yaml` if it exists 
