@@ -1,0 +1,9 @@
+name: HZDR AI
+version: 1.0.0
+schema: v1
+models:
+  - name: Autodetect
+    provider: openai
+    model: AUTODETECT
+    apiKey: continue-dev
+    apiBase: https://localai-test.fz-rossendorf.de/v1/

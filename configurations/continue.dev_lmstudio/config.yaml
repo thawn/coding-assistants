@@ -1,0 +1,8 @@
+name: Local Agent
+version: 1.0.0
+schema: v1
+models:
+  - name: Autodetect
+    provider: lmstudio
+    model: AUTODETECT
+    apiBase: http://localhost:1234/v1/
