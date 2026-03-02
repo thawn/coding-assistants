@@ -121,9 +121,10 @@ tabsize=2
     \begin{column}{0.45\textwidth}
       \begin{itemize}
         \item Coding agents work largely autonomously
-        \item Implement whole features, fix bugs, write documentation
+        \item Implement features, fix bugs, write documentation
         \item Powered by large language models (LLMs) fine-tuned for tool use and code generation
-        \item Accelerate prototyping; you stay in control. \textbf{Human-in-the-loop is essential.}
+        \item Accelerate prototyping
+        \item \textbf{Human-in-the-loop is essential}
         \item Can be IDE-integrated, CLI-based, or \textbf{web-based}
       \end{itemize}
     \end{column}
@@ -173,7 +174,7 @@ tabsize=2
 \end{frame}
 
 \begin{frame}
-  {Prompting Best Practices}
+  {Best Practices}
   \begin{columns}
     \begin{column}{0.3\textwidth}
       \includegraphics[width=\textwidth]{images/human_instructing_agent_AI_generated.png}
@@ -182,7 +183,7 @@ tabsize=2
       \Large
       \begin{itemize}
         \item Specify the desired end result, not how to implement it.
-        \item Plan the issue (=prompt) well (use a chat model).
+        \item Plan the prompt well (use a chat model).
         \item Use structured tasks and checklists
         \item Understand, review and test all generated code.
         \item Iterate and refine pull requests.
@@ -262,7 +263,7 @@ tabsize=2
       \Large
       \begin{itemize}
         \item Run the agent in an environment where it can execute code and tests
-        \item The environment should be safe to execute commands (e.g. a virtual machine)
+        \item The environment should be safe to execute commands (e.g. a virtual machine or CI runner)
         \item All dependencies to run code and tests should be installed \textrightarrow~on GitHub use \tool{copilot-setup-steps.yml}
         \item Internet access should be restricted to known trustworthy sites to prevent prompt injections
       \end{itemize}
@@ -339,5 +340,25 @@ tabsize=2
   \end{columns}
 \end{frame}
 
+\begin{frame}
+  {Summary}
+
+  \begin{columns}
+    \begin{column}{0.3\textwidth}
+      \includegraphics[width=\textwidth]{images/QR-code_github_repo.png}
+      \url{https://github.com/thawn/coding-assistants} CC-BY 4.0
+    \end{column}
+    \begin{column}{0.7\textwidth}
+      \Large
+      \begin{itemize}
+        \item Coding agents accelerate software development
+        \item Require careful prompting and human oversight
+        \item Ideal for rapid prototyping, documentation, and testing
+        \item Struggle with complex or novel tasks
+        \item No replacement for skilled software engineers
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
 
 \end{document}
