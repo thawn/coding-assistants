@@ -11,14 +11,20 @@ jobs:
         container: texlive/texlive:latest
         steps:
             - uses: actions/checkout@v3
-            
-            - run: cd slides && make
-            - name: Upload PDF artifact
+
+            - run: cd coding_assistants && make
+            - name: Upload coding_assistants PDF artifact
               uses: actions/upload-artifact@v4
               with:
-                    name: slides
-                    path: |
-                        slides/slides.pdf
+                    name: coding_assistants
+                    path: coding_assistants/slides.pdf
+
+            - run: cd vibe_coding && make
+            - name: Upload vibe_coding PDF artifact
+              uses: actions/upload-artifact@v4
+              with:
+                    name: vibe_coding
+                    path: vibe_coding/slides.pdf
 
     release:
         needs: build
@@ -26,11 +32,16 @@ jobs:
         permissions:
             contents: write
             packages: write
-        
+
         steps:
             - uses: actions/download-artifact@v4
               with:
-                    name: slides
+                    name: coding_assistants
+                    path: coding_assistants
+            - uses: actions/download-artifact@v4
+              with:
+                    name: vibe_coding
+                    path: vibe_coding
             - name: Create Release
               id: create_release
               uses: actions/create-release@v1
@@ -41,12 +52,21 @@ jobs:
                 release_name: Release ${{ github.ref }}
                 draft: false
                 prerelease: false
-            - name: Upload slide PDF as Release Asset
+            - name: Upload coding_assistants PDF as Release Asset
               uses: actions/upload-release-asset@v1
               env:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               with:
                 upload_url: ${{ steps.create_release.outputs.upload_url }}
-                asset_path: ./slides.pdf
-                asset_name: slides.pdf
+                asset_path: ./coding_assistants/slides.pdf
+                asset_name: coding_assistants.pdf
+                asset_content_type: application/pdf
+            - name: Upload vibe_coding PDF as Release Asset
+              uses: actions/upload-release-asset@v1
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              with:
+                upload_url: ${{ steps.create_release.outputs.upload_url }}
+                asset_path: ./vibe_coding/slides.pdf
+                asset_name: vibe_coding.pdf
                 asset_content_type: application/pdf
