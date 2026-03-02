@@ -1,0 +1,322 @@
+
+@misc{siddiqui_uncertainty_2023,
+  title     = {Uncertainty {Estimation} in {Instance} {Segmentation} with {Star}-convex {Shapes}},
+  url       = {http://arxiv.org/abs/2309.10513},
+  abstract  = {Instance segmentation has witnessed promising advancements through deep neural network-based algorithms. However, these models often exhibit incorrect predictions with unwarranted confidence levels. Consequently, evaluating prediction uncertainty becomes critical for informed decision-making. Existing methods primarily focus on quantifying uncertainty in classification or regression tasks, lacking emphasis on instance segmentation. Our research addresses the challenge of estimating spatial certainty associated with the location of instances with star-convex shapes. Two distinct clustering approaches are evaluated which compute spatial and fractional certainty per instance employing samples by the Monte-Carlo Dropout or Deep Ensemble technique. Our study demonstrates that combining spatial and fractional certainty scores yields improved calibrated estimation over individual certainty scores. Notably, our experimental results show that the Deep Ensemble technique alongside our novel radial clustering approach proves to be an effective strategy. Our findings emphasize the significance of evaluating the calibration of estimated certainties for model reliability and decision-making.},
+  language  = {en},
+  urldate   = {2024-07-29},
+  publisher = {arXiv},
+  author    = {Siddiqui, Qasim M. K. and Starke, Sebastian and Steinbach, Peter},
+  month     = sep,
+  year      = {2023},
+  note      = {arXiv:2309.10513 [cs]},
+  keywords  = {Computer Science - Computer Vision and Pattern Recognition},
+  file      = {Siddiqui et al. - 2023 - Uncertainty Estimation in Instance Segmentation wi.pdf:/Users/korten/Zotero/storage/Z6T6UEHQ/Siddiqui et al. - 2023 - Uncertainty Estimation in Instance Segmentation wi.pdf:application/pdf}
+}
+
+@article{kurz_uncertainty_2022,
+  title      = {Uncertainty {Estimation} in {Medical} {Image} {Classification}: {Systematic} {Review}},
+  volume     = {10},
+  copyright  = {This is an open-access article distributed under the terms of the Creative Commons Attribution License (https://creativecommons.org/licenses/by/4.0/), which permits unrestricted use, distribution, and reproduction in any medium, provided the original work, first published JMIR Medical Informatics, is properly cited. The complete bibliographic information, a link to the original publication on https://medinform.jmir.org/, as well as this copyright and license information must be included.},
+  shorttitle = {Uncertainty {Estimation} in {Medical} {Image} {Classification}},
+  url        = {https://medinform.jmir.org/2022/8/e36427},
+  doi        = {10.2196/36427},
+  abstract   = {Background: Deep neural networks are showing impressive results in different medical image classification tasks. However, for real-world applications, there is a need to estimate the network’s uncertainty together with its prediction.
+                Objective: In this review, we investigate in what form uncertainty estimation has been applied to the task of medical image classification. We also investigate which metrics are used to describe the effectiveness of the applied uncertainty estimation
+                Methods: Google Scholar, PubMed, IEEE Xplore, and ScienceDirect were screened for peer-reviewed studies, published between 2016 and 2021, that deal with uncertainty estimation in medical image classification. The search terms “uncertainty,” “uncertainty estimation,” “network calibration,” and “out-of-distribution detection” were used in combination with the terms “medical images,” “medical image analysis,” and “medical image classification.”
+                Results: A total of 22 papers were chosen for detailed analysis through the systematic review process. This paper provides a table for a systematic comparison of the included works with respect to the applied method for estimating the uncertainty.
+                Conclusions: The applied methods for estimating uncertainties are diverse, but the sampling-based methods Monte-Carlo Dropout and Deep Ensembles are used most frequently. We concluded that future works can investigate the benefits of uncertainty estimation in collaborative settings of artificial intelligence systems and human experts.},
+  language   = {EN},
+  number     = {8},
+  urldate    = {2025-02-14},
+  journal    = {JMIR Medical Informatics},
+  author     = {Kurz, Alexander and Hauser, Katja and Mehrtens, Hendrik Alexander and Krieghoff-Henning, Eva and Hekler, Achim and Kather, Jakob Nikolas and Fröhling, Stefan and Kalle, Christof von and Brinker, Titus Josef},
+  month      = aug,
+  year       = {2022},
+  note       = {Company: JMIR Medical Informatics
+                Distributor: JMIR Medical Informatics
+                Institution: JMIR Medical Informatics
+                Label: JMIR Medical Informatics
+                Publisher: JMIR Publications Inc., Toronto, Canada},
+  pages      = {e36427},
+  file       = {Full Text:/Users/korten/Zotero/storage/3YPQHYYI/Kurz et al. - 2022 - Uncertainty Estimation in Medical Image Classification Systematic Review.pdf:application/pdf;Snapshot:/Users/korten/Zotero/storage/7KZPUEJ6/e36427.html:text/html}
+}
+
+@article{linmans_uncertainty_2025,
+  title    = {Uncertainty estimation in digital pathology. {Towards} applying artificial intelligence in an uncertain clinical world},
+  url      = {https://repository.ubn.ru.nl/handle/2066/313569},
+  abstract = {Radboud University, 31 januari 2025},
+  language = {en},
+  urldate  = {2025-02-14},
+  author   = {Linmans, J. H. J.},
+  year     = {2025},
+  note     = {Accepted: 2024-12-14T03:25:11Z
+              Publisher: S.l. : s.n.},
+  file     = {Full Text PDF:/Users/korten/Zotero/storage/TJFHL45B/Linmans - 2025 - Uncertainty estimation in digital pathology. Towards applying artificial intelligence in an uncertai.pdf:application/pdf}
+}
+
+@article{loftus_uncertainty-aware_2022,
+  title      = {Uncertainty-aware deep learning in healthcare: {A} scoping review},
+  volume     = {1},
+  issn       = {2767-3170},
+  shorttitle = {Uncertainty-aware deep learning in healthcare},
+  url        = {https://journals.plos.org/digitalhealth/article?id=10.1371/journal.pdig.0000085},
+  doi        = {10.1371/journal.pdig.0000085},
+  abstract   = {Mistrust is a major barrier to implementing deep learning in healthcare settings. Entrustment could be earned by conveying model certainty, or the probability that a given model output is accurate, but the use of uncertainty estimation for deep learning entrustment is largely unexplored, and there is no consensus regarding optimal methods for quantifying uncertainty. Our purpose is to critically evaluate methods for quantifying uncertainty in deep learning for healthcare applications and propose a conceptual framework for specifying certainty of deep learning predictions. We searched Embase, MEDLINE, and PubMed databases for articles relevant to study objectives, complying with PRISMA guidelines, rated study quality using validated tools, and extracted data according to modified CHARMS criteria. Among 30 included studies, 24 described medical imaging applications. All imaging model architectures used convolutional neural networks or a variation thereof. The predominant method for quantifying uncertainty was Monte Carlo dropout, producing predictions from multiple networks for which different neurons have dropped out and measuring variance across the distribution of resulting predictions. Conformal prediction offered similar strong performance in estimating uncertainty, along with ease of interpretation and application not only to deep learning but also to other machine learning approaches. Among the six articles describing non-imaging applications, model architectures and uncertainty estimation methods were heterogeneous, but predictive performance was generally strong, and uncertainty estimation was effective in comparing modeling methods. Overall, the use of model learning curves to quantify epistemic uncertainty (attributable to model parameters) was sparse. Heterogeneity in reporting methods precluded the performance of a meta-analysis. Uncertainty estimation methods have the potential to identify rare but important misclassifications made by deep learning models and compare modeling methods, which could build patient and clinician trust in deep learning applications in healthcare. Efficient maturation of this field will require standardized guidelines for reporting performance and uncertainty metrics.},
+  language   = {en},
+  number     = {8},
+  urldate    = {2025-02-15},
+  journal    = {PLOS Digital Health},
+  author     = {Loftus, Tyler J. and Shickel, Benjamin and Ruppert, Matthew M. and Balch, Jeremy A. and Ozrazgat-Baslanti, Tezcan and Tighe, Patrick J. and Efron, Philip A. and Hogan, William R. and Rashidi, Parisa and Jr, Gilbert R. Upchurch and Bihorac, Azra},
+  month      = aug,
+  year       = {2022},
+  note       = {Publisher: Public Library of Science},
+  keywords   = {Deep learning, Digital video imaging microscopy, Functional magnetic resonance imaging, Imaging techniques, Neural networks, Pulmonary imaging, Recurrent neural networks, Ultrasound imaging},
+  pages      = {e0000085},
+  file       = {Full Text PDF:/Users/korten/Zotero/storage/76E23KDB/Loftus et al. - 2022 - Uncertainty-aware deep learning in healthcare A scoping review.pdf:application/pdf}
+}
+
+@inproceedings{su_uncertainty_2023,
+  title     = {Uncertainty {Quantification} of {Collaborative} {Detection} for {Self}-{Driving}},
+  url       = {https://ieeexplore.ieee.org/abstract/document/10160367?casa_token=lRJ69flJTdoAAAAA:XBCucrqdilddF9m10oAJS_Au3-oj46cfVAVH9r4P6JN-PxrgeRPnjYaA_Abw93AxDHgNnkfvNn7t},
+  doi       = {10.1109/ICRA48891.2023.10160367},
+  abstract  = {Sharing information between connected and autonomous vehicles (CAVs) fundamentally improves the performance of collaborative object detection for self-driving. However, CAVs still have uncertainties on object detection due to practical challenges, which will affect the later modules in self-driving such as planning and control. Hence, uncertainty quantification is crucial for safety-critical systems such as CAVs. Our work is the first to estimate the uncertainty of collaborative object detection. We propose a novel uncertainty quantification method, called Double- M Quantification, which tailors a moving block bootstrap (MBB) algorithm with direct modeling of the multivariant Gaussian distribution of each corner of the bounding box. Our method captures both the epistemic uncertainty and aleatoric uncertainty with one inference pass based on the offline Double- M training process. And it can be used with different collaborative object detectors. Through experiments on the comprehensive collaborative perception dataset, we show that our Double-M method achieves more than 4× improvement on uncertainty score and more than 3\% accuracy improvement, compared with the state-of-the-art uncertainty quantification methods. Our code is public on https://coperception.github.io/double-m-quantification/.},
+  urldate   = {2025-02-15},
+  booktitle = {2023 {IEEE} {International} {Conference} on {Robotics} and {Automation} ({ICRA})},
+  author    = {Su, Sanbao and Li, Yiming and He, Sihong and Han, Songyang and Feng, Chen and Ding, Caiwen and Miao, Fei},
+  month     = may,
+  year      = {2023},
+  keywords  = {Collaboration, Detectors, Estimation, Gaussian distribution, Object detection, Training, Uncertainty},
+  pages     = {5588--5594},
+  file      = {IEEE Xplore Abstract Record:/Users/korten/Zotero/storage/T86EGBBJ/10160367.html:text/html;Submitted Version:/Users/korten/Zotero/storage/5UMQFVFW/Su et al. - 2023 - Uncertainty Quantification of Collaborative Detection for Self-Driving.pdf:application/pdf}
+}
+
+@article{lambert_trustworthy_2024,
+  title      = {Trustworthy clinical {AI} solutions: {A} unified review of uncertainty quantification in {Deep} {Learning} models for medical image analysis},
+  volume     = {150},
+  issn       = {0933-3657},
+  shorttitle = {Trustworthy clinical {AI} solutions},
+  url        = {https://www.sciencedirect.com/science/article/pii/S0933365724000721},
+  doi        = {10.1016/j.artmed.2024.102830},
+  abstract   = {The full acceptance of Deep Learning (DL) models in the clinical field is rather low with respect to the quantity of high-performing solutions reported in the literature. End users are particularly reluctant to rely on the opaque predictions of DL models. Uncertainty quantification methods have been proposed in the literature as a potential solution, to reduce the black-box effect of DL models and increase the interpretability and the acceptability of the result by the final user. In this review, we propose an overview of the existing methods to quantify uncertainty associated with DL predictions. We focus on applications to medical image analysis, which present specific challenges due to the high dimensionality of images and their variable quality, as well as constraints associated with real-world clinical routine. Moreover, we discuss the concept of structural uncertainty, a corpus of methods to facilitate the alignment of segmentation uncertainty estimates with clinical attention. We then discuss the evaluation protocols to validate the relevance of uncertainty estimates. Finally, we highlight the open challenges for uncertainty quantification in the medical field.},
+  urldate    = {2025-02-15},
+  journal    = {Artificial Intelligence in Medicine},
+  author     = {Lambert, Benjamin and Forbes, Florence and Doyle, Senan and Dehaene, Harmonie and Dojat, Michel},
+  month      = apr,
+  year       = {2024},
+  keywords   = {Artificial intelligence, Classification, Machine learning, Medical imaging, Quality control, Segmentation},
+  pages      = {102830},
+  file       = {ScienceDirect Snapshot:/Users/korten/Zotero/storage/RHV42N3C/S0933365724000721.html:text/html;Submitted Version:/Users/korten/Zotero/storage/BHNGMM36/Lambert et al. - 2024 - Trustworthy clinical AI solutions A unified review of uncertainty quantification in Deep Learning m.pdf:application/pdf}
+}
+
+@inproceedings{guo_calibration_2017,
+  title     = {On {Calibration} of {Modern} {Neural} {Networks}},
+  url       = {https://proceedings.mlr.press/v70/guo17a.html},
+  abstract  = {Confidence calibration – the problem of predicting probability estimates representative of the true correctness likelihood – is important for classification models in many applications. We discover that modern neural networks, unlike those from a decade ago, are poorly calibrated. Through extensive experiments, we observe that depth, width, weight decay, and Batch Normalization are important factors influencing calibration. We evaluate the performance of various post-processing calibration methods on state-of-the-art architectures with image and document classification datasets. Our analysis and experiments not only offer insights into neural network learning, but also provide a simple and straightforward recipe for practical settings: on most datasets, temperature scaling – a single-parameter variant of Platt Scaling – is surprisingly effective at calibrating predictions.},
+  language  = {en},
+  urldate   = {2025-02-15},
+  booktitle = {Proceedings of the 34th {International} {Conference} on {Machine} {Learning}},
+  publisher = {PMLR},
+  author    = {Guo, Chuan and Pleiss, Geoff and Sun, Yu and Weinberger, Kilian Q.},
+  month     = jul,
+  year      = {2017},
+  note      = {ISSN: 2640-3498},
+  pages     = {1321--1330},
+  file      = {Full Text PDF:/Users/korten/Zotero/storage/37RSVVHL/Guo et al. - 2017 - On Calibration of Modern Neural Networks.pdf:application/pdf;Supplementary PDF:/Users/korten/Zotero/storage/8W2ZNHNK/Guo et al. - 2017 - On Calibration of Modern Neural Networks.pdf:application/pdf}
+}
+
+@inproceedings{lambert_triadnet_2023,
+  address    = {Cham},
+  title      = {{TriadNet}: {Sampling}-{Free} {Predictive} {Intervals} for {Lesional} {Volume} in {3D} {Brain} {MR} {Images}},
+  isbn       = {978-3-031-44336-7},
+  shorttitle = {{TriadNet}},
+  doi        = {10.1007/978-3-031-44336-7_4},
+  abstract   = {The volume of a brain lesion (e.g. infarct or tumor) is a powerful indicator of patient prognosis and can be used to guide the therapeutic strategy. Lesional volume estimation is usually performed by segmentation with deep convolutional neural networks (CNN), currently the state-of-the-art approach. However, to date, few work has been done to equip volume segmentation tools with adequate quantitative predictive intervals, which can hinder their usefulness and acceptation in clinical practice. In this work, we propose TriadNet, a segmentation approach relying on a multi-head CNN architecture, which provides both the lesion volumes and the associated predictive intervals simultaneously, in less than a second. We demonstrate its superiority over other solutions on BraTS 2021, a large-scale MRI glioblastoma image database. Our implementation of TriadNet is available at https://github.com/benolmbrt/TriadNet.},
+  language   = {en},
+  booktitle  = {Uncertainty for {Safe} {Utilization} of {Machine} {Learning} in {Medical} {Imaging}},
+  publisher  = {Springer Nature Switzerland},
+  author     = {Lambert, Benjamin and Forbes, Florence and Doyle, Senan and Dojat, Michel},
+  editor     = {Sudre, Carole H. and Baumgartner, Christian F. and Dalca, Adrian and Mehta, Raghav and Qin, Chen and Wells, William M.},
+  year       = {2023},
+  pages      = {32--41}
+}
+
+@misc{angelopoulos_uncertainty_2022,
+  title     = {Uncertainty {Sets} for {Image} {Classifiers} using {Conformal} {Prediction}},
+  url       = {http://arxiv.org/abs/2009.14193},
+  doi       = {10.48550/arXiv.2009.14193},
+  abstract  = {Convolutional image classifiers can achieve high predictive accuracy, but quantifying their uncertainty remains an unresolved challenge, hindering their deployment in consequential settings. Existing uncertainty quantification techniques, such as Platt scaling, attempt to calibrate the network's probability estimates, but they do not have formal guarantees. We present an algorithm that modifies any classifier to output a predictive set containing the true label with a user-specified probability, such as 90\%. The algorithm is simple and fast like Platt scaling, but provides a formal finite-sample coverage guarantee for every model and dataset. Our method modifies an existing conformal prediction algorithm to give more stable predictive sets by regularizing the small scores of unlikely classes after Platt scaling. In experiments on both Imagenet and Imagenet-V2 with ResNet-152 and other classifiers, our scheme outperforms existing approaches, achieving coverage with sets that are often factors of 5 to 10 smaller than a stand-alone Platt scaling baseline.},
+  urldate   = {2025-02-17},
+  publisher = {arXiv},
+  author    = {Angelopoulos, Anastasios and Bates, Stephen and Malik, Jitendra and Jordan, Michael I.},
+  month     = sep,
+  year      = {2022},
+  note      = {arXiv:2009.14193 [cs]},
+  keywords  = {Computer Science - Computer Vision and Pattern Recognition, Mathematics - Statistics Theory, Statistics - Machine Learning, Statistics - Statistics Theory},
+  annote    = {Comment: ICLR 2021 Spotlight, https://openreview.net/forum?id=eNdiU\_DbM9 . Project website at https://people.eecs.berkeley.edu/{\textasciitilde}angelopoulos/blog/posts/conformal-classification/ . Codebase at https://github.com/aangelopoulos/conformal\_classification},
+  file      = {Preprint PDF:/Users/korten/Zotero/storage/9ZP2N6QK/Angelopoulos et al. - 2022 - Uncertainty Sets for Image Classifiers using Conformal Prediction.pdf:application/pdf;Snapshot:/Users/korten/Zotero/storage/MILPRIYL/2009.html:text/html}
+}
+
+@article{jospin_hands-bayesian_2022,
+  title    = {Hands-{On} {Bayesian} {Neural} {Networks}—{A} {Tutorial} for {Deep} {Learning} {Users}},
+  volume   = {17},
+  issn     = {1556-6048},
+  url      = {https://ieeexplore.ieee.org/document/9756596},
+  doi      = {10.1109/MCI.2022.3155327},
+  abstract = {Modern deep learning methods constitute incredibly powerful tools to tackle a myriad of challenging problems. However, since deep learning methods operate as black boxes, the uncertainty associated with their predictions is often challenging to quantify. Bayesian statistics offer a formalism to understand and quantify the uncertainty associated with deep neural network predictions. This tutorial provides deep learning practitioners with an overview of the relevant literature and a complete toolset to design, implement, train, use and evaluate Bayesian neural networks, i.e., stochastic artificial neural networks trained using Bayesian methods.},
+  number   = {2},
+  urldate  = {2025-02-17},
+  journal  = {IEEE Computational Intelligence Magazine},
+  author   = {Jospin, Laurent Valentin and Laga, Hamid and Boussaid, Farid and Buntine, Wray and Bennamoun, Mohammed},
+  month    = may,
+  year     = {2022},
+  note     = {Conference Name: IEEE Computational Intelligence Magazine},
+  keywords = {Bayes methods, Computational modeling, Deep learning, Design methodology, Neural networks, Stochastic processes, Training data, Tutorials, Uncertainty},
+  pages    = {29--48},
+  file     = {Full Text PDF:/Users/korten/Zotero/storage/XBKVH5ZT/Jospin et al. - 2022 - Hands-On Bayesian Neural Networks—A Tutorial for Deep Learning Users.pdf:application/pdf;IEEE Xplore Abstract Record:/Users/korten/Zotero/storage/9Q5JFUYF/9756596.html:text/html}
+}
+
+@inproceedings{gal_dropout_2016,
+  title      = {Dropout as a {Bayesian} {Approximation}: {Representing} {Model} {Uncertainty} in {Deep} {Learning}},
+  shorttitle = {Dropout as a {Bayesian} {Approximation}},
+  url        = {https://proceedings.mlr.press/v48/gal16.html},
+  abstract   = {Deep learning tools have gained tremendous attention in applied machine learning. However such tools for regression and classification do not capture model uncertainty. In comparison, Bayesian models offer a mathematically grounded framework to reason about model uncertainty, but usually come with a prohibitive computational cost. In this paper we develop a new theoretical framework casting dropout training in deep neural networks (NNs) as approximate Bayesian inference in deep Gaussian processes. A direct result of this theory gives us tools to model uncertainty with dropout NNs – extracting information from existing models that has been thrown away so far. This mitigates the problem of representing uncertainty in deep learning without sacrificing either computational complexity or test accuracy. We perform an extensive study of the properties of dropout’s uncertainty. Various network architectures and non-linearities are assessed on tasks of regression and classification, using MNIST as an example. We show a considerable improvement in predictive log-likelihood and RMSE compared to existing state-of-the-art methods, and finish by using dropout’s uncertainty in deep reinforcement learning.},
+  language   = {en},
+  urldate    = {2025-02-17},
+  booktitle  = {Proceedings of {The} 33rd {International} {Conference} on {Machine} {Learning}},
+  publisher  = {PMLR},
+  author     = {Gal, Yarin and Ghahramani, Zoubin},
+  month      = jun,
+  year       = {2016},
+  note       = {ISSN: 1938-7228},
+  pages      = {1050--1059},
+  file       = {Full Text PDF:/Users/korten/Zotero/storage/RA3UW3XT/Gal and Ghahramani - 2016 - Dropout as a Bayesian Approximation Representing Model Uncertainty in Deep Learning.pdf:application/pdf}
+}
+
+@inproceedings{lakshminarayanan_simple_2017,
+  title     = {Simple and {Scalable} {Predictive} {Uncertainty} {Estimation} using {Deep} {Ensembles}},
+  volume    = {30},
+  url       = {https://proceedings.neurips.cc/paper_files/paper/2017/hash/9ef2ed4b7fd2c810847ffa5fa85bce38-Abstract.html},
+  abstract  = {Deep neural networks (NNs) are powerful black box predictors that have recently achieved impressive performance on a wide spectrum of tasks. Quantifying predictive uncertainty in NNs is a challenging and yet unsolved problem.  Bayesian NNs, which learn a distribution over weights, are currently the state-of-the-art for estimating predictive uncertainty; however these require significant modifications to the training procedure and are computationally expensive compared to standard (non-Bayesian)  NNs.  We propose an alternative to Bayesian NNs that is simple to implement, readily parallelizable, requires very little hyperparameter tuning, and yields high quality predictive uncertainty estimates. Through a series of experiments on classification and regression benchmarks, we demonstrate that our method produces well-calibrated uncertainty estimates which are as good or better than approximate Bayesian NNs. To assess robustness to dataset shift, we evaluate the predictive uncertainty on test examples from known and unknown distributions, and show that our method is able to express higher uncertainty on out-of-distribution examples. We demonstrate the scalability of our method by evaluating predictive uncertainty estimates on ImageNet.},
+  urldate   = {2025-02-17},
+  booktitle = {Advances in {Neural} {Information} {Processing} {Systems}},
+  publisher = {Curran Associates, Inc.},
+  author    = {Lakshminarayanan, Balaji and Pritzel, Alexander and Blundell, Charles},
+  year      = {2017},
+  file      = {Full Text PDF:/Users/korten/Zotero/storage/WYL8XUWQ/Lakshminarayanan et al. - 2017 - Simple and Scalable Predictive Uncertainty Estimation using Deep Ensembles.pdf:application/pdf}
+}
+
+@inproceedings{kendall_what_2017,
+  title     = {What {Uncertainties} {Do} {We} {Need} in {Bayesian} {Deep} {Learning} for {Computer} {Vision}?},
+  volume    = {30},
+  url       = {https://proceedings.neurips.cc/paper/2017/hash/2650d6089a6d640c5e85b2b88265dc2b-Abstract.html},
+  abstract  = {There are two major types of uncertainty one can model. Aleatoric uncertainty captures noise inherent in the observations. On the other hand, epistemic uncertainty accounts for uncertainty in the model - uncertainty which can be explained away given enough data. Traditionally it has been difficult to model epistemic uncertainty in computer vision, but with new Bayesian deep learning tools this is now possible. We study the benefits of modeling epistemic vs. aleatoric uncertainty in Bayesian deep learning models for vision tasks. For this we present a Bayesian deep learning framework combining input-dependent aleatoric uncertainty together with epistemic uncertainty. We study models under the framework with per-pixel semantic segmentation and depth regression tasks. Further, our explicit uncertainty formulation leads to new loss functions for these tasks, which can be interpreted as learned attenuation. This makes the loss more robust to noisy data, also giving new state-of-the-art results on segmentation and depth regression benchmarks.},
+  urldate   = {2025-02-17},
+  booktitle = {Advances in {Neural} {Information} {Processing} {Systems}},
+  publisher = {Curran Associates, Inc.},
+  author    = {Kendall, Alex and Gal, Yarin},
+  year      = {2017},
+  file      = {Full Text PDF:/Users/korten/Zotero/storage/RLTYG7UL/Kendall and Gal - 2017 - What Uncertainties Do We Need in Bayesian Deep Learning for Computer Vision.pdf:application/pdf}
+}
+
+@inproceedings{ayhan_test-time_2022,
+  title    = {Test-time {Data} {Augmentation} for {Estimation} of {Heteroscedastic} {Aleatoric} {Uncertainty} in {Deep} {Neural} {Networks}},
+  url      = {https://openreview.net/forum?id=rJZz-knjz},
+  abstract = {Deep neural networks (DNNs) have revolutionized medical image analysis and disease diagnosis. Despite their impressive increase in performance, it is difficult to generate well-calibrated probabilistic outputs for such networks such that state-of-the-art networks fail to provide reliable uncertainty estimates regarding their decisions. We propose a simple but effective method using traditional data augmentation methods such as geometric and color transformations at test time. This allows to examine how much the network output varies in the vicinity of examples in the input spaces. Despite its simplicity, our method yields useful estimates for the input-dependent predictive uncertainties of deep neural networks. We showcase the impact of our method via the well-known collection of fundus images obtained from a previous Kaggle competition.},
+  language = {en},
+  urldate  = {2025-02-17},
+  author   = {Ayhan, Murat Seckin and Berens, Philipp},
+  month    = jul,
+  year     = {2022},
+  file     = {Full Text PDF:/Users/korten/Zotero/storage/GIMGQNZB/Ayhan and Berens - 2022 - Test-time Data Augmentation for Estimation of Heteroscedastic Aleatoric Uncertainty in Deep Neural N.pdf:application/pdf}
+}
+
+@inproceedings{kohl_probabilistic_2018,
+  title     = {A {Probabilistic} {U}-{Net} for {Segmentation} of {Ambiguous} {Images}},
+  volume    = {31},
+  url       = {https://proceedings.neurips.cc/paper_files/paper/2018/hash/473447ac58e1cd7e96172575f48dca3b-Abstract.html},
+  abstract  = {Many real-world vision problems suffer from inherent ambiguities. In clinical applications for example, it might not be clear from a CT scan alone which particular region is cancer tissue. Therefore a group of graders typically produces a set of diverse but plausible segmentations. We consider the task of learning a distribution over segmentations given an input. To this end we propose a generative segmentation model based on a combination of a U-Net with a conditional variational autoencoder that is capable of efficiently producing an unlimited number of plausible hypotheses. We show on a lung abnormalities segmentation task and on a Cityscapes segmentation task that our model reproduces the possible segmentation variants as well as the frequencies with which they occur, doing so significantly better than published approaches. These models could have a high impact in real-world applications, such as being used as clinical decision-making algorithms accounting for multiple plausible semantic segmentation hypotheses to provide possible diagnoses and recommend further actions to resolve the present ambiguities.},
+  urldate   = {2025-02-17},
+  booktitle = {Advances in {Neural} {Information} {Processing} {Systems}},
+  publisher = {Curran Associates, Inc.},
+  author    = {Kohl, Simon and Romera-Paredes, Bernardino and Meyer, Clemens and De Fauw, Jeffrey and Ledsam, Joseph R. and Maier-Hein, Klaus and Eslami, S. M. Ali and Jimenez Rezende, Danilo and Ronneberger, Olaf},
+  year      = {2018},
+  file      = {Full Text PDF:/Users/korten/Zotero/storage/HPXFGUL7/Kohl et al. - 2018 - A Probabilistic U-Net for Segmentation of Ambiguous Images.pdf:application/pdf}
+}
+
+@article{feng_review_2022,
+  title    = {A {Review} and {Comparative} {Study} on {Probabilistic} {Object} {Detection} in {Autonomous} {Driving}},
+  volume   = {23},
+  issn     = {1558-0016},
+  url      = {https://ieeexplore.ieee.org/abstract/document/9525313?casa_token=bkkhfeheGy8AAAAA:PSuVUiPX0j9IMgtXhZ40ORmY9PpFKfxLAblmCCsD6dlTR-qM4W3KH7rp-Otm0tVspmqXoydPMpxl},
+  doi      = {10.1109/TITS.2021.3096854},
+  abstract = {Capturing uncertainty in object detection is indispensable for safe autonomous driving. In recent years, deep learning has become the de-facto approach for object detection, and many probabilistic object detectors have been proposed. However, there is no summary on uncertainty estimation in deep object detection, and existing methods are either built with different network architectures and uncertainty estimation methods, or evaluated on different datasets with a wide range of evaluation metrics. As a result, a comparison among methods remains challenging, as does the selection of a model that best suits a particular application. This paper aims to alleviate this problem by providing a review and comparative study on existing probabilistic object detection methods for autonomous driving applications. First, we provide an overview of practical uncertainty estimation methods in deep learning, and then systematically survey existing methods and evaluation metrics for probabilistic object detection. Next, we present a strict comparative study for probabilistic object detection based on an image detector and three public autonomous driving datasets. Finally, we present a discussion of the remaining challenges and future works. Code has been made available at https://github.com/asharakeh/pod\_compare.git.},
+  number   = {8},
+  urldate  = {2025-02-17},
+  journal  = {IEEE Transactions on Intelligent Transportation Systems},
+  author   = {Feng, Di and Harakeh, Ali and Waslander, Steven L. and Dietmayer, Klaus},
+  month    = aug,
+  year     = {2022},
+  note     = {Conference Name: IEEE Transactions on Intelligent Transportation Systems},
+  keywords = {autonomous driving, Autonomous vehicles, deep learning, Deep learning, Estimation, object detection, Object detection, Probabilistic logic, Training, Uncertainty, Uncertainty estimation},
+  pages    = {9961--9980},
+  file     = {IEEE Xplore Abstract Record:/Users/korten/Zotero/storage/D5UCNAPA/9525313.html:text/html;Submitted Version:/Users/korten/Zotero/storage/VZBJMHLA/Feng et al. - 2022 - A Review and Comparative Study on Probabilistic Object Detection in Autonomous Driving.pdf:application/pdf}
+}
+
+@book{hastie_elements_2001,
+  address   = {New York, NY},
+  series    = {Springer {Series} in {Statistics}},
+  title     = {The {Elements} of {Statistical} {Learning}},
+  copyright = {http://www.springer.com/tdm},
+  isbn      = {978-1-4899-0519-2 978-0-387-21606-5},
+  url       = {http://link.springer.com/10.1007/978-0-387-21606-5},
+  urldate   = {2025-02-21},
+  publisher = {Springer},
+  author    = {Hastie, Trevor and Friedman, Jerome and Tibshirani, Robert},
+  year      = {2001},
+  doi       = {10.1007/978-0-387-21606-5},
+  keywords  = {algorithms, bioinformatics, Boosting, classification, clustering, data mining, ensemble method, learning, machine learning, neural networks, Random Forest, statistics, supervised learning, Support Vector Machine, unsupervised learning}
+}
+
+@book{vovk_algorithmic_2022,
+  address   = {Cham},
+  title     = {Algorithmic {Learning} in a {Random} {World}},
+  copyright = {https://www.springernature.com/gp/researchers/text-and-data-mining},
+  isbn      = {978-3-031-06648-1 978-3-031-06649-8},
+  url       = {https://link.springer.com/10.1007/978-3-031-06649-8},
+  language  = {en},
+  urldate   = {2025-02-21},
+  publisher = {Springer International Publishing},
+  author    = {Vovk, Vladimir and Gammerman, Alexander and Shafer, Glenn},
+  year      = {2022},
+  doi       = {10.1007/978-3-031-06649-8},
+  keywords  = {Conformal prediction, conformal predictive distributions, conformal testing, machine learning, nonparametric statistics, online compression modeling, Venn prediction}
+}
+
+@misc{mucsanyi_benchmarking_2024,
+  title      = {Benchmarking {Uncertainty} {Disentanglement}: {Specialized} {Uncertainties} for {Specialized} {Tasks}},
+  shorttitle = {Benchmarking {Uncertainty} {Disentanglement}},
+  url        = {http://arxiv.org/abs/2402.19460},
+  abstract   = {Uncertainty quantification, once a singular task, has evolved into a spectrum of tasks, including abstained prediction, out-of-distribution detection, and aleatoric uncertainty quantification. The latest goal is disentanglement: the construction of multiple estimators that are each tailored to one and only one task. Hence, there is a plethora of recent advances with different intentions - that often entirely deviate from practical behavior. This paper conducts a comprehensive evaluation of numerous uncertainty estimators across diverse tasks on ImageNet. We find that, despite promising theoretical endeavors, disentanglement is not yet achieved in practice. Additionally, we reveal which uncertainty estimators excel at which specific tasks, providing insights for practitioners and guiding future research toward task-centric and disentangled uncertainty estimation methods. Our code is available at https://github.com/bmucsanyi/bud.},
+  language   = {en},
+  urldate    = {2024-07-29},
+  publisher  = {arXiv},
+  author     = {Mucsányi, Bálint and Kirchhof, Michael and Oh, Seong Joon},
+  month      = feb,
+  year       = {2024},
+  note       = {arXiv:2402.19460 [cs, stat]},
+  keywords   = {Computer Science - Machine Learning, Statistics - Machine Learning},
+  annote     = {Comment: 43 pages},
+  file       = {Mucsányi et al. - 2024 - Benchmarking Uncertainty Disentanglement Speciali.pdf:/Users/korten/Zotero/storage/HP3A8AE5/Mucsányi et al. - 2024 - Benchmarking Uncertainty Disentanglement Speciali.pdf:application/pdf}
+}
+
+
+@article{schmerler_case_nodate,
+  title      = {The case for calibration: {How} to create reliable neural network uncertainties},
+  shorttitle = {The case for calibration},
+  url        = {https://www.hzdr.de/publications/Publ-40731},
+  language   = {de},
+  urldate    = {2025-03-07},
+  author     = {Schmerler, Steve and Starke, Sebastian and Steinbach, Peter},
+  file       = {Snapshot:/Users/korten/Zotero/storage/47TN5BVJ/Publ-40731.html:text/html}
+}
