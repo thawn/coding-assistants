@@ -69,9 +69,9 @@ tabsize=2
 \newcommand{\tool}[1]{\texttt{#1}}
 
 \title{Vibe Coding: A Useful Science Tool} % Change Me
-\subtitle{AIfternoon: Agents at Work} % Change Me
+\subtitle{AI Tools for Scientists} % Change Me
 \author{\href{mailto:t.korten@hzdr.de}{Till Korten}} % Change Me
-\date{March 2, 2026} % Change Me
+\date{May 22, 2026} % Change Me
 \institute{Helmholtz-Zentrum Dresden-Rossendorf}
 \titlegraphic{}
 
@@ -175,6 +175,22 @@ tabsize=2
 % \end{frame}
 
 \begin{frame}
+  {Caveats of Web-Based Coding}
+  \begin{columns}
+    \begin{column}{0.6\textwidth}
+      \includegraphics[width=\textwidth]{images/copilot_costs.png}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+      \Large
+      \begin{itemize}
+        \item Latency: CI runners take $\approx$ a minute to spin up the agent.
+        \item Cost: Microsoft just decided to make money instead of subsidizing GitHub Copilot \rightarrow~40 x cost increase. GitLab Duo is a premium feature.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
   {Opencode Workflow}
   \begin{columns}
     \begin{column}{0.55\textwidth}
@@ -191,7 +207,7 @@ tabsize=2
     \end{column}
     \begin{column}{0.45\textwidth}
       \begin{enumerate}[label=\arabic*.]
-        \item \textbf{Create a new branch} — e.g., \tool{git checkout -b add-new-feature}
+        \item \textbf{Create a new branch} — \tool{git checkout -b add-new-feature}
         \item \textbf{Plan mode} (\tool{Tab}) — propose changes without executing, iterate with feedback
         \item \textbf{Build mode} (\tool{Tab}) — execute the plan and implement changes
         \item \textbf{Review} — inspect changes, use \tool{/undo} to revert and refine
@@ -396,6 +412,7 @@ tabsize=2
     \Large
     \item Use Opencode or GitHub Copilot for a small project. Examples:
           \begin{itemize}
+            \item Implement the research proposal or visualization example from session two
             \item Write a script to automate a tedious task in your daily work
             \item Implement a new feature in an existing codebase
             \item Fix a bug
