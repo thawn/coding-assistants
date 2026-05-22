@@ -7,3 +7,7 @@
 Slide PDFs can be found in releases.
 
 Use a PDF reader that can play movies (e.g. Adobe Acrobat Reader, Foxit Reader)
+
+## Hedgedoc
+
+Weitere Infos und Materialien zum Workshop findet ihr hier: https://notes.desy.de/s79xuPqMRsiJO1HbbpNKBA
